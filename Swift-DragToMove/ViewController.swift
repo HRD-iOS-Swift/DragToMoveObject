@@ -9,6 +9,7 @@
 import UIKit
 
 class ViewController: UIViewController {
+    @IBOutlet weak var view1: UIView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +21,11 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
+       let touchPoint = touches.first?.locationInView(view);
+        
+        self.view1.center = touchPoint!;
+    }
 
 }
 
